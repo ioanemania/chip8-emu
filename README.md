@@ -16,3 +16,7 @@ You can get roms from https://github.com/kripod/chip8-roms to play around.
 
 - [Cowgod's Chip-8 Technical Reference v1.0](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM)
 - [Wikipedia: CHIP-8](https://en.wikipedia.org/wiki/CHIP-8)
+
+## Todo
+
+- [ ] Implement a sound interface.
