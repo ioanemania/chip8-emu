@@ -1,5 +1,6 @@
 #pragma once
 
+#include "buzzer.hpp"
 #include "cpu.hpp"
 #include "display.hpp"
 #include "io.hpp"
@@ -13,6 +14,7 @@ private:
   C8_Display *display;
   C8_RAM *ram;
   C8_IO *io;
+  C8_Buzzer *buzzer;
 
 public:
   /*

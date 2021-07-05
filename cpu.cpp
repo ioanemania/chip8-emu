@@ -30,11 +30,19 @@ byteswap(uint16_t u16)
 #define REFRESH_RATE    60
 
 void
-CPU::parse_instruction(C8_RAM &ram, C8_Display &display, C8_IO &io)
+CPU::parse_instruction(
+  C8_RAM &ram, C8_Display &display, C8_IO &io, C8_Buzzer &buzzer)
 {
   if(cycles++ == CPU_CLOCK_SPEED / REFRESH_RATE) {
     cycles = 0;
-    sound_timer = sound_timer > 0 ? --sound_timer : 0;
+
+    if(sound_timer > 0) {
+      --sound_timer;
+      buzzer.set_volume(1);
+    } else {
+      buzzer.set_volume(0);
+    }
+
     delay_timer = delay_timer > 0 ? --delay_timer : 0;
     std::this_thread::sleep_for(
       std::chrono::milliseconds(1000 / REFRESH_RATE));

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "buzzer.hpp"
 #include "display.hpp"
 #include "io.hpp"
 #include "ram.hpp"
@@ -25,7 +26,8 @@ public:
    * @param io C8_IO input/output event instance that is modified in case of a
    * related instruction.
    */
-  virtual void parse_instruction(C8_RAM &ram, C8_Display &display, C8_IO &io)
+  virtual void parse_instruction(
+    C8_RAM &ram, C8_Display &display, C8_IO &io, C8_Buzzer &buzzer)
     = 0;
 };
 
@@ -43,5 +45,5 @@ private:
 public:
   virtual void reset() override;
   virtual void parse_instruction(
-    C8_RAM &ram, C8_Display &display, C8_IO &io) override;
+    C8_RAM &ram, C8_Display &display, C8_IO &io, C8_Buzzer &buzzer) override;
 };

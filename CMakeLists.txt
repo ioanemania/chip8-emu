@@ -18,6 +18,8 @@ add_executable(chip8-emu
   display.hpp
   io.hpp
   io.cpp
+  buzzer.cpp
+  buzzer.hpp
 )
 
 target_link_libraries(chip8-emu SDL2::SDL2)
