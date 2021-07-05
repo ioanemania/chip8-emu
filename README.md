@@ -19,4 +19,4 @@ You can get roms from https://github.com/kripod/chip8-roms to play around.
 
 ## Todo
 
-- [ ] Implement a sound interface.
+- [x] Implement a sound interface.
